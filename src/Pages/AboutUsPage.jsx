@@ -1,11 +1,11 @@
 import HomeLayout from "../Layouts/HomeLayout";
 import aboutMainImage from "../assets/Images/aboutMainImage.png";
-import apj from '../assets/Images/QuotesPersonalityImage/apj.png';
-import billGates from '../assets/Images/QuotesPersonalityImage/billGates.png'
-import einstein from '../assets/Images/QuotesPersonalityImage/einstein.png'
-import nelsonMandela from '../assets/Images/QuotesPersonalityImage/nelsonMandela.png'
-import steveJobs from '../assets/Images/QuotesPersonalityImage/steveJobs.png'
+import { celebrities } from "../Constants/CelebrityData";
+import CarouselSide from "../Components/CarouselSide";
+
 function AboutUs() {
+
+   
     return (
         <HomeLayout>
             <div className="pl-20 pt-20 flex flex-col text-white">
@@ -38,7 +38,30 @@ function AboutUs() {
 
                
                 <div className="carousel w-1/2 my-16 m-auto">
-                  <div id="slide1" className="carousel-item relative w-full">
+                  {celebrities && celebrities.map(celebrity => (<CarouselSide 
+                                                                 {...celebrity} 
+                                                                 key={celebrity.slideNumber} 
+                                                                 totalSlides={celebrities.length}
+                                                               />))}
+                   
+
+
+
+
+                
+
+                   
+               </div>
+
+            </div>
+        </HomeLayout>
+    );
+}
+
+export default AboutUs;
+
+{/* carousel slide original code desiUI */}
+                  {/* <div id="slide1" className="carousel-item relative w-full">
                       <div className="flex flex-col items-centre justify-centre gap-4 px-[15%]">
                        <img
                           src={nelsonMandela}
@@ -116,14 +139,4 @@ function AboutUs() {
                         <a href="#slide1" className="btn btn-circle">❯</a>
                        </div>
                       </div>
-                    </div>
-
-                   
-               </div>
-
-            </div>
-        </HomeLayout>
-    );
-}
-
-export default AboutUs;
+                    </div> */}
