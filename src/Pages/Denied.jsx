@@ -15,6 +15,7 @@ function Denied() {
                 <span className="relative block px-8 py-3 bg-[#1A2238] border border-current">
                     Go Back
                 </span>
+                
             </button>
         </main>
     );
